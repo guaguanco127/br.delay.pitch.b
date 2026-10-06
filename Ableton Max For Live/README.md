@@ -73,3 +73,7 @@ All controls can be automated in Live.
 ## <a name="Version"></a>Version History  
 
 Version 1.0 (09-29-2026): first release of version b -- br.delay.pitch.a 1.2 plus just-intonation Steps with Cents, and Rand / Auto / Onset randomizing of pitch, delay and feedback.
+
+## <a name="Credits"></a>Credits
+
+Built around gizmo~ (Cycling '74).
