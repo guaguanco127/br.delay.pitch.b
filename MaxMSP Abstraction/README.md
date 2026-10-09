@@ -1,11 +1,11 @@
-# Max/MSP Abstraction: br.delay.pitch.b.1.1  
+# Max/MSP Abstraction: br.delay.pitch.b.1.2  
 
 By Brian Riordan  
 [guaguanco127@gmail.com](mailto:guaguanco127@gmail.com)  
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
 
-Repository for br.delay.pitch.b.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
+Repository for br.delay.pitch.b.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
 The simpler version a (same sound, fewer controls): [https://github.com/guaguanco127/br.delay.pitch.a](https://github.com/guaguanco127/br.delay.pitch.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)  
 
@@ -13,6 +13,7 @@ Created with Max 9.
 
 ## Table of Contents 
 
+[What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [What is an abstraction?](#Abstraction)  
@@ -21,6 +22,10 @@ Created with Max 9.
 [State outlet](#State)  
 [Example Patch](#Example)  
 [Version History](#Version) 
+
+## What's New in 1.2
+
+- **Mix Mode is now "Thru" / "Aux" (was "Insert" / "Gate").** "Thru" (0) lets the dry sound pass while the effect is off; "Aux" (1) is silent until you turn it on, for use on a send/return. Only the names changed: the numbers, the default and the sound are exactly as in 1.1, so 1.2 swaps in without rewiring.
 
 ## What's New in 1.1
 
@@ -54,7 +59,7 @@ Only works as an abstraction or a device. External objects and RNBO not availabl
 
 **Highpass / Lowpass:** Filters in the feedback loop. Highpass 40 to 1,000 Hz (default 40), Lowpass 1,000 to 15,000 Hz (default 12,000). They never go below 40 Hz or above 15 kHz, so repeats can never build up too low or too high.
 
-**Mix Mode (Insert / Gate):** What happens to your dry sound while the effect is off. Insert (the default) lets the dry sound pass through, as before. Gate silences it, so only the repeats already in the loop ring out. While the effect is on, Mix Mode changes nothing.
+**Mix Mode (Thru / Aux):** What happens to your dry sound while the effect is off. Thru (the default) lets the dry sound pass through, as before. Aux silences it, so only the repeats already in the loop ring out. While the effect is on, Mix Mode changes nothing.
 
 **Randomizing:** Rand, Auto and Onset all randomize whichever targets are switched on, and the dials move with them.
 - **Pitch / Delay / Feedback (targets):** choose what gets randomized. All off by default -- switch on the ones you want. Pitch picks a random Step (-12 to 12, so it always lands on a just-intonation interval), Delay picks 0 to 1000 ms (crossfaded, click-free), Feedback picks 0 to 0.99 (so a random value never makes the loop build).
@@ -73,13 +78,13 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.delay.pitch.b.1.1.maxpat inside of the same folder as the Max patch you are using.      
+2. Copy and paste br.delay.pitch.b.1.2.maxpat inside of the same folder as the Max patch you are using.      
 
 3. Also, copy and paste the file called br.delay.pitch.pfft.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**
 
-4. In the Max patch you are using, create an object called br.delay.pitch.b.1.1 
+4. In the Max patch you are using, create an object called br.delay.pitch.b.1.2 
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.delay.pitch.b.1.1.maxpat located within the same folder as your project. 
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.delay.pitch.b.1.2.maxpat located within the same folder as your project. 
 
 ## <a name="Use"></a>How To Use
 
@@ -106,7 +111,7 @@ Every control has its own inlet. Sending a value to an inlet moves its on-screen
 | 15 | Rand Pitch | Int | 0 = Off, 1 = On, random Steps -12 - 12 | 0 |
 | 16 | Rand Delay | Int | 0 = Off, 1 = On, random 0 - 1000 ms | 0 |
 | 17 | Rand Feedback | Int | 0 = Off, 1 = On, random 0 - 0.99 | 0 |
-| 18 | Mix Mode | Int | 0 = Insert (Off passes the dry signal), 1 = Gate (Off silences the dry signal; the repeats still ring out) | 0 |
+| 18 | Mix Mode | Int | 0 = Thru (Off passes the dry signal), 1 = Aux (Off silences the dry signal; the repeats still ring out) | 0 |
 
 | Outlet | Output | Type |
 |---|---|---|
@@ -136,22 +141,23 @@ The last outlet sends the current settings as named messages the moment they cha
 | randpitch | Rand Pitch | 0 = Off, 1 = On |
 | randdelay | Rand Delay | 0 = Off, 1 = On |
 | randfeedback | Rand Feedback | 0 = Off, 1 = On |
-| mode | Mix Mode | 0 = Insert, 1 = Gate |
+| mode | Mix Mode | 0 = Thru, 1 = Aux |
 
 Rand is a button, not a setting, so it is not reported. Moving Steps also reports `cents` (Steps sets Cents), and Rand / Auto / Onset report the values they pick.
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.delay.pitch.b.example.1.1.maxpat (keep it in the same folder as the abstraction and br.delay.pitch.pfft.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.delay.pitch.b.example.1.2.maxpat (keep it in the same folder as the abstraction and br.delay.pitch.pfft.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Delay-Pitch:** it opens bypassed, so turn it on on the panel (or with the On/Off toggle).
 - **Randomizing:** switch on one or more Rand targets, then press Rand, or turn on Auto or Onset.
-- **Mix Mode:** turn the effect off with a tail ringing and compare Insert (dry keeps playing) with Gate (only the repeats).
+- **Mix Mode:** turn the effect off with a tail ringing and compare Thru (dry keeps playing) with Aux (only the repeats).
 - **State outlet tab:** the numbers follow every setting -- from the panel, the messages, or the randomizer.
 
 ## <a name="Version"></a>Version History  
 
+Version 1.2 (10-09-2026) renamed Mix Mode to Thru / Aux.  
 Version 1.1 (10-09-2026): Insert / Gate (Mix Mode); Auto and Onset no longer switch on at load; Rand targets start off; State outlet and an example patch for the abstraction; readable control names.  
 Version 1.0 (09-29-2026): first release of version b -- br.delay.pitch.a 1.2 plus just-intonation Steps with Cents, and Rand / Auto / Onset randomizing of pitch, delay and feedback.
 
