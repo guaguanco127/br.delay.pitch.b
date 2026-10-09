@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.delay.pitch.b.1.0
+## br.delay.pitch.b.1.1
 
 
 By Brian Riordan  
@@ -8,7 +8,7 @@ By Brian Riordan
 [brianriordanmusic@gmail.com](mailto:brianriordanmusic@gmail.com)  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
 
-Repository for br.delay.pitch.b.1.0, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
+Repository for br.delay.pitch.b.1.1, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
 The simpler version a (same sound, fewer controls): [https://github.com/guaguanco127/br.delay.pitch.a](https://github.com/guaguanco127/br.delay.pitch.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)  
 
@@ -16,10 +16,21 @@ Created with Max 9.
 
 ## Links
 
+[What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.delay.pitch.b/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.delay.pitch.b/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP  
 [Version History](#Version)      
+
+## What's New in 1.1
+
+- **Insert / Gate (Mix Mode):** a new switch for what happens to the dry sound while the effect is off. Insert (the default) passes it, exactly like 1.0; Gate silences it, so only the repeats ring out.
+- **Fixed:** Auto and Onset no longer switch themselves on when the device or abstraction loads.
+- **Rand targets start off** (Pitch / Delay / Feedback): switch on the ones you want randomized.
+- **State outlet** (abstraction only): a new last outlet sends every setting as a named message the moment it changes. See [State outlet](https://github.com/guaguanco127/br.delay.pitch.b/tree/main/MaxMSP%20Abstraction#State).
+- Inlets 1-17 and the L/R outlets are unchanged; Mix Mode is the new last inlet (18). So 1.1 swaps in for 1.0 without rewiring.
+- **New example patch:** _br.delay.pitch.b.example.1.1 with a demo source, messages into every inlet and a State outlet tab.
+- The controls have readable names (On/Off, Steps, Delay, Feedback, Dry/Wet, Mix Mode), so presets and pattr show them clearly.
 
 ## <a name="About"></a>About
 
@@ -43,8 +54,10 @@ Only works as an abstraction or a device. External objects and RNBO not availabl
 
 **Highpass / Lowpass:** Filters in the feedback loop. Highpass 40 to 1,000 Hz (default 40), Lowpass 1,000 to 15,000 Hz (default 12,000). They never go below 40 Hz or above 15 kHz, so repeats can never build up too low or too high.
 
+**Mix Mode (Insert / Gate):** What happens to your dry sound while the effect is off. Insert (the default) lets the dry sound pass through, as before. Gate silences it, so only the repeats already in the loop ring out. While the effect is on, Mix Mode changes nothing.
+
 **Randomizing:** Rand, Auto and Onset all randomize whichever targets are switched on, and the dials move with them.
-- **Pitch / Delay / Feedback (targets):** choose what gets randomized. All on by default. Pitch picks a random Step (-12 to 12, so it always lands on a just-intonation interval), Delay picks 0 to 1000 ms (crossfaded, click-free), Feedback picks 0 to 0.99 (so a random value never makes the loop build).
+- **Pitch / Delay / Feedback (targets):** choose what gets randomized. All off by default -- switch on the ones you want. Pitch picks a random Step (-12 to 12, so it always lands on a just-intonation interval), Delay picks 0 to 1000 ms (crossfaded, click-free), Feedback picks 0 to 0.99 (so a random value never makes the loop build).
 - **Rand:** randomize once.
 - **Auto:** randomize over and over, every two delay times (never faster than every 100 ms). Off by default.
 - **Onset:** randomize on every attack you play into the device. It listens for sudden rises in level, so a held note triggers once, not over and over. Off by default.
@@ -52,11 +65,8 @@ Only works as an abstraction or a device. External objects and RNBO not availabl
 
 ## <a name="Version"></a>Version History  
 
+Version 1.1 (10-09-2026): Insert / Gate (Mix Mode); Auto and Onset no longer switch on at load; Rand targets start off; State outlet and an example patch for the abstraction; readable control names.  
 Version 1.0 (09-29-2026): first release of version b -- br.delay.pitch.a 1.2 plus just-intonation Steps with Cents, and Rand / Auto / Onset randomizing of pitch, delay and feedback.
-
-## <a name="Credits"></a>Credits
-
-Built around gizmo~ (Cycling '74).
 
 ## <a name="Credits"></a>Credits
 
