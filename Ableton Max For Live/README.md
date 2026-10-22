@@ -43,7 +43,7 @@ This is a delay-based Max/MSP abstraction, and Ableton Max for Live device that 
 
 The feedback loop is protected by a soft saturator and by a high pass and low pass filter, so pitch-shifted repeats can never build up too high, too low or too loud. The pitch-shifter switches itself off once the effect is off and the repeats have died away, for very low CPU at rest.
 
-Only works as an abstraction or a device. External objects and RNBO not available yet. An important file is included in each folder called "br.delay.pitch.pfft.1.3.maxpat". The abstraction needs it in the same folder; the Max for Live device is frozen and already contains it. No third-party objects are needed.
+Only works as an abstraction or a device. External objects and RNBO not available yet. The abstraction needs the file "br.delay.pitch.pfft.1.3.maxpat" in the same folder (it is in the MaxMSP Abstraction folder); the Max for Live device is frozen and already contains it. No third-party objects are needed.
 
 **Delay-Pitch (On/Off):** Turns the effect on, or bypasses new input. The default is bypass. Turning it off only stops new sound entering the delay; the repeats already in the loop keep going and ring out (or hold, at Feedback 1.0 or above). Dry/Wet still works while it is off.
 
