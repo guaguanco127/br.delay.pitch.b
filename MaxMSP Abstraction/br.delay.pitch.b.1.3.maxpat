@@ -18,7 +18,7 @@
 		"openrectmode": 0,
 		"openinpresentation": 1,
 		"devicewidth": 192.0,
-		"description": "br.delay.pitch.b.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
+		"description": "br.delay.pitch.b.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
 		"boxes": [
 			{
 				"box": {
@@ -1059,7 +1059,7 @@
 						520.0,
 						47.0
 					],
-					"text": "br.delay.pitch.b.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around gizmo~ (Cycling '74)."
+					"text": "br.delay.pitch.b.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around gizmo~ (Cycling '74)."
 				}
 			},
 			{
@@ -5048,7 +5048,7 @@
 										112.0,
 										49.0
 									],
-									"text": "pfft~ br.delay.pitch.pfft 1024 4"
+									"text": "pfft~ br.delay.pitch.pfft.1.3 1024 4"
 								}
 							},
 							{
@@ -5067,7 +5067,7 @@
 										112.0,
 										49.0
 									],
-									"text": "pfft~ br.delay.pitch.pfft 1024 4"
+									"text": "pfft~ br.delay.pitch.pfft.1.3 1024 4"
 								}
 							},
 							{
@@ -7160,7 +7160,7 @@
 			{
 				"box": {
 					"angle": 270.0,
-					"annotation": "br.delay.pitch.b.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
+					"annotation": "br.delay.pitch.b.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
 					"bgcolor": [
 						0.0,
 						0.0,
@@ -7173,7 +7173,7 @@
 						0.0,
 						1.0
 					],
-					"hint": "br.delay.pitch.b.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
+					"hint": "br.delay.pitch.b.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
 					"id": "obj-25",
 					"maxclass": "panel",
 					"mode": 0,

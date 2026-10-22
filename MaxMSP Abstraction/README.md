@@ -1,11 +1,11 @@
-# Max/MSP Abstraction: br.delay.pitch.b.1.2  
+# Max/MSP Abstraction: br.delay.pitch.b.1.3  
 
 By Brian Riordan  
 guaguanco127 [at] gmail [dot] com  
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
 
-Repository for br.delay.pitch.b.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
+Repository for br.delay.pitch.b.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
 The simpler version a (same sound, fewer controls): [https://github.com/guaguanco127/br.delay.pitch.a](https://github.com/guaguanco127/br.delay.pitch.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)  
 
@@ -13,6 +13,7 @@ Created with Max 9.
 
 ## Table of Contents 
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
@@ -22,6 +23,11 @@ Created with Max 9.
 [State outlet](#State)  
 [Example Patch](#Example)  
 [Version History](#Version) 
+
+## What's New in 1.3
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.3, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.2
 
@@ -43,7 +49,7 @@ This is a delay-based Max/MSP abstraction, and Ableton Max for Live device that 
 
 The feedback loop is protected by a soft saturator and by a high pass and low pass filter, so pitch-shifted repeats can never build up too high, too low or too loud. The pitch-shifter switches itself off once the effect is off and the repeats have died away, for very low CPU at rest.
 
-Only works as an abstraction or a device. External objects and RNBO not available yet. An important file is included in each folder called "br.delay.pitch.pfft.maxpat". Keep it in the same folder as the abstraction or device -- they will not work without it. No third-party objects are needed.
+Only works as an abstraction or a device. External objects and RNBO not available yet. An important file is included in each folder called "br.delay.pitch.pfft.1.3.maxpat". The abstraction needs it in the same folder; the Max for Live device is frozen and already contains it. No third-party objects are needed.
 
 **Delay-Pitch (On/Off):** Turns the effect on, or bypasses new input. The default is bypass. Turning it off only stops new sound entering the delay; the repeats already in the loop keep going and ring out (or hold, at Feedback 1.0 or above). Dry/Wet still works while it is off.
 
@@ -78,13 +84,13 @@ By saving your logic in an abstraction, you can create modules that can be used 
 
 1. Make sure you have Max 9 installed in your computer. And, make sure you are using a Max patch that is inside of a folder.  
 
-2. Copy and paste br.delay.pitch.b.1.2.maxpat inside of the same folder as the Max patch you are using.      
+2. Copy and paste br.delay.pitch.b.1.3.maxpat inside of the same folder as the Max patch you are using.      
 
-3. Also, copy and paste the file called br.delay.pitch.pfft.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**
+3. Also, copy and paste the file called br.delay.pitch.pfft.1.3.maxpat into the same folder. If this file is already there, then there is no reason to copy and paste it. **The abstraction will not work without this file.**
 
-4. In the Max patch you are using, create an object called br.delay.pitch.b.1.2 
+4. In the Max patch you are using, create an object called br.delay.pitch.b.1.3 
 
-5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.delay.pitch.b.1.2.maxpat located within the same folder as your project. 
+5. Alternatively, you could also create this inside of a bpatcher object and use all of the preset UI objects featured inside the abstraction. To do this, create a bpatcher object. Then, go inside of its inspector, select "choose" next to "Patcher File" and select the br.delay.pitch.b.1.3.maxpat located within the same folder as your project. 
 
 ## <a name="Use"></a>How To Use
 
@@ -147,7 +153,7 @@ Rand is a button, not a setting, so it is not reported. Moving Steps also report
 
 ## <a name="Example"></a>Example Patch
 
-Open _br.delay.pitch.b.example.1.2.maxpat (keep it in the same folder as the abstraction and br.delay.pitch.pfft.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
+Open _br.delay.pitch.b.example.1.3.maxpat (keep it in the same folder as the abstraction and br.delay.pitch.pfft.1.3.maxpat). Turn on the audio with the toggle, then raise the gain slider, which starts muted.
 
 - **Source:** the demo saw plucks (220 Hz left, 330 Hz right) start when the patch opens; turn on the mic / line in 1 + 2 toggle to use your own sound.
 - **Delay-Pitch:** it opens bypassed, so turn it on on the panel (or with the On/Off toggle).
@@ -157,6 +163,7 @@ Open _br.delay.pitch.b.example.1.2.maxpat (keep it in the same folder as the abs
 
 ## <a name="Version"></a>Version History  
 
+Version 1.3 (10-21-2026) froze the Max for Live device and gave every file in the repository the same version number.  
 Version 1.2 (10-09-2026) renamed Mix Mode to Thru / Aux.  
 Version 1.1 (10-09-2026): Insert / Gate (Mix Mode); Auto and Onset no longer switch on at load; Rand targets start off; State outlet and an example patch for the abstraction; readable control names.  
 Version 1.0 (09-29-2026): first release of version b -- br.delay.pitch.a 1.2 plus just-intonation Steps with Cents, and Rand / Auto / Onset randomizing of pitch, delay and feedback.
