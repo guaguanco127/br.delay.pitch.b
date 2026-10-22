@@ -15,7 +15,7 @@
 			1350.0,
 			800.0
 		],
-		"description": "_br.delay.pitch.b.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
+		"description": "_br.delay.pitch.b.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com -- https://github.com/guaguanco127/ -- Credits: built around gizmo~ (Cycling '74).",
 		"showontab": 1,
 		"boxes": [
 			{
@@ -33,7 +33,7 @@
 						468.0,
 						47.0
 					],
-					"text": "_br.delay.pitch.b.example.1.2 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around gizmo~ (Cycling '74)."
+					"text": "_br.delay.pitch.b.example.1.3 -- Created by Brian Riordan, guaguanco127@gmail.com\nhttps://github.com/guaguanco127/\nCredits: built around gizmo~ (Cycling '74)."
 				}
 			},
 			{
@@ -495,7 +495,7 @@
 					"lockeddragscroll": 0,
 					"lockedsize": 0,
 					"maxclass": "bpatcher",
-					"name": "br.delay.pitch.b.1.2.maxpat",
+					"name": "br.delay.pitch.b.1.3.maxpat",
 					"numinlets": 18,
 					"numoutlets": 3,
 					"offset": [
@@ -531,7 +531,7 @@
 						420.0,
 						20.0
 					],
-					"text": "br.delay.pitch.b.1.2 (bpatcher). It opens BYPASSED: turn it on."
+					"text": "br.delay.pitch.b.1.3 (bpatcher). It opens BYPASSED: turn it on."
 				}
 			},
 			{
@@ -549,7 +549,7 @@
 						188.0,
 						141.0
 					],
-					"text": "Keep these files together, next to your patch: br.delay.pitch.b.1.2.maxpat and br.delay.pitch.pfft.maxpat (the pitch shifter it loads). \n\nThe Rand Pitch / Delay / Feedback targets start OFF: switch on the ones you want randomized."
+					"text": "Keep these files together, next to your patch: br.delay.pitch.b.1.3.maxpat and br.delay.pitch.pfft.1.3.maxpat (the pitch shifter it loads). \n\nThe Rand Pitch / Delay / Feedback targets start OFF: switch on the ones you want randomized."
 				}
 			},
 			{

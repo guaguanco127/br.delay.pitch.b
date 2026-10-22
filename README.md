@@ -1,6 +1,6 @@
 # Max/MSP Patches, Abstractions, Externals, RNBO, VSTs, and Ableton Max for Live 
 
-## br.delay.pitch.b.1.2
+## br.delay.pitch.b.1.3
 
 
 By Brian Riordan  
@@ -8,7 +8,7 @@ guaguanco127 [at] gmail [dot] com
 brianriordanmusic [at] gmail [dot] com  
 [https://www.brianriordanmusic.com/](https://www.brianriordanmusic.com/) 
 
-Repository for br.delay.pitch.b.1.2, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
+Repository for br.delay.pitch.b.1.3, with all related files, can be found here: [https://github.com/guaguanco127/br.delay.pitch.b](https://github.com/guaguanco127/br.delay.pitch.b)  
 The simpler version a (same sound, fewer controls): [https://github.com/guaguanco127/br.delay.pitch.a](https://github.com/guaguanco127/br.delay.pitch.a)  
 Additional programs can be found here: [https://github.com/guaguanco127/br.max](https://github.com/guaguanco127/br.max)  
 
@@ -16,12 +16,18 @@ Created with Max 9.
 
 ## Links
 
+[What's New in 1.3](#whats-new-in-13)  
 [What's New in 1.2](#whats-new-in-12)  
 [What's New in 1.1](#whats-new-in-11)  
 [About](#About)   
 [Ableton Max for Live Device](https://github.com/guaguanco127/br.delay.pitch.b/tree/main/Ableton%20Max%20For%20Live) To use inside of Ableton Suite   
 [Max/MSP Abstraction](https://github.com/guaguanco127/br.delay.pitch.b/tree/main/MaxMSP%20Abstraction) To use as an abstraction within Max/MSP  
 [Version History](#Version)      
+
+## What's New in 1.3
+
+- **Frozen Max for Live device.** The device now carries its helper files inside it, so copying the .amxd alone is enough.
+- **One version number.** Every file in this repository is now 1.3, including the helper files. Nothing changed in the sound.
 
 ## What's New in 1.2
 
@@ -43,7 +49,7 @@ This is a delay-based Max/MSP abstraction, and Ableton Max for Live device that 
 
 The feedback loop is protected by a soft saturator and by a high pass and low pass filter, so pitch-shifted repeats can never build up too high, too low or too loud. The pitch-shifter switches itself off once the effect is off and the repeats have died away, for very low CPU at rest.
 
-Only works as an abstraction or a device. External objects and RNBO not available yet. An important file is included in each folder called "br.delay.pitch.pfft.maxpat". Keep it in the same folder as the abstraction or device -- they will not work without it. No third-party objects are needed.
+Only works as an abstraction or a device. External objects and RNBO not available yet. An important file is included in each folder called "br.delay.pitch.pfft.1.3.maxpat". The abstraction needs it in the same folder; the Max for Live device is frozen and already contains it. No third-party objects are needed.
 
 **Delay-Pitch (On/Off):** Turns the effect on, or bypasses new input. The default is bypass. Turning it off only stops new sound entering the delay; the repeats already in the loop keep going and ring out (or hold, at Feedback 1.0 or above). Dry/Wet still works while it is off.
 
@@ -70,6 +76,7 @@ Only works as an abstraction or a device. External objects and RNBO not availabl
 
 ## <a name="Version"></a>Version History  
 
+Version 1.3 (10-21-2026) froze the Max for Live device and gave every file in the repository the same version number.  
 Version 1.2 (10-09-2026) renamed Mix Mode to Thru / Aux.  
 Version 1.1 (10-09-2026): Insert / Gate (Mix Mode); Auto and Onset no longer switch on at load; Rand targets start off; State outlet and an example patch for the abstraction; readable control names.  
 Version 1.0 (09-29-2026): first release of version b -- br.delay.pitch.a 1.2 plus just-intonation Steps with Cents, and Rand / Auto / Onset randomizing of pitch, delay and feedback.
