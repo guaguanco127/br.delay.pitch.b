@@ -49,9 +49,9 @@ Only works as an abstraction or a device. External objects and RNBO not availabl
 
 **Steps:** Pitch shift in just-intonation steps, -12 to 12. The default is 0. The steps follow the overtone scale (harmonics 16 to 32: 17/16, 9/8, 19/16, 5/4, 21/16, 11/8, 3/2, 13/8, 27/16, 7/4, 15/8, 2/1); downward steps use the same notes an octave lower. Moving Steps sets Cents to that interval. The table is saved inside the patch -- no extra file.
 
-**Cents:** The actual pitch shift in cents, -2400 to 2400 (two octaves either way). The default is 0. Steps set it to a just-intonation value; turn Cents afterwards to fine-tune, or use it on its own for any microtonal shift. The pitch-shifter adds a latency of 1024 samples (about 23 ms at 44,100 Hz).
+**Cents:** The actual pitch shift in cents, -2400 to 2400 (two octaves either way). The default is 0. Steps set it to a just-intonation value; turn Cents afterwards to fine-tune, or use it on its own for any microtonal shift. The pitch-shifter adds a latency of 768 samples (the FFT window of 1024 minus its hop of 256).
 
-**Delay:** Delay time in ms, between 0 and 1000 ms. The default is 100 ms. The actual delay is the prescribed time plus the pitch-shifter's latency. The shortest possible delay is one signal vector plus that latency: for example, with a vector size of 256 samples (about 5.8 ms at 44,100 Hz), the shortest delay is about 29 ms.
+**Delay:** Delay time in ms, between 0 and 1000 ms. The default is 100 ms. The actual delay is the prescribed time plus the pitch-shifter's latency. The shortest possible delay is one signal vector plus that latency: for example, with a vector size of 256 samples, the shortest delay is 256 + 768 = 1024 samples.
 
 **Feedback:** The amount of signal fed back into the delay line, between 0 and 1.25. The default is 0. At 1.0 the repeats hold forever; above 1.0 they build until the loop's soft saturator holds them, giving a dense, driven wash.
 
